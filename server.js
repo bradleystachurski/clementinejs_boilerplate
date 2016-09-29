@@ -5,8 +5,10 @@ var express = require('express'),
     mongo = require('mongodb').MongoClient;
 
 var app = express();
+var port = process.env.PORT || 3000;
+var Mongo_URI = process.env.Mongo_URI || 'mongodb://localhost:27017/clementinejs';
 
-mongo.connect('mongodb://localhost:27017/clementinejs', function (err, db) {
+mongo.connect(Mongo_URI, function (err, db) {
 
     if (err) {
         throw new Error('Database failed to connect!');
@@ -19,7 +21,7 @@ mongo.connect('mongodb://localhost:27017/clementinejs', function (err, db) {
 
     routes(app, db);
 
-    app.listen(3000, function () {
+    app.listen(port, function () {
         console.log('Listening on port 3000...');
     });
 
