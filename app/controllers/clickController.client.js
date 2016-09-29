@@ -4,7 +4,7 @@
     var addButton = document.querySelector('.btn-add');
     var deleteButton = document.querySelector('.btn-delete');
     var clickNbr = document.querySelector('#click-nbr');
-    var apiUrl = window.location.origin + '/api/clicks'; ///*'protected-citadel-76721.herokuapp.com/api/clicks' ||*/ 'http://localhost:3000/api/clicks';
+    var apiUrl = window.location.origin + '/api/clicks';
 
     function ready (fn) {
         if (typeof fn !== 'function') {
